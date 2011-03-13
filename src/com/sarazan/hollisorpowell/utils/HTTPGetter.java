@@ -1,4 +1,4 @@
-package com.sarazan.hollisorpowell;
+package com.sarazan.hollisorpowell.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -34,20 +34,20 @@ public class MainActivity extends Activity {
         setContentView(tv);
     }
     
-    private class ScrapeTask extends AsyncTask<BusRoute, Integer, String> {
+    private class ScrapeTask extends AsyncTask<BusRoute, Integer, NextBusScraper> {
 
 		@Override
-		protected String doInBackground(BusRoute... params) {
+		protected NextBusScraper doInBackground(BusRoute... params) {
 			BusRoute route = params[0];
 			NextBusScraper scraper = new NextBusScraper(route);
-			String retval = scraper.execute();
+			scraper.execute();
 			
-			return retval;
+			return scraper;
 		}
 		
 		@Override
-		protected void onPostExecute(String result) {
-			tv.setText(result);
+		protected void onPostExecute(NextBusScraper result) {
+			tv.setText(result.toString());
 		}    	
     }
 }
