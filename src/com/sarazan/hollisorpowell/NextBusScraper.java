@@ -1,9 +1,5 @@
 package com.sarazan.hollisorpowell;
 
-import java.text.CharacterIterator;
-import java.text.StringCharacterIterator;
-import java.util.Iterator;
-
 import com.sarazan.hollisorpowell.route.BusRoute;
 import com.sarazan.hollisorpowell.utils.HTTPGetter;
 
