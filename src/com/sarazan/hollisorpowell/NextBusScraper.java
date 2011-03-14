@@ -59,8 +59,7 @@ public class NextBusScraper {
 		return minutes;
 	}
 	
-	@Override
-	public String toString() {
+	public String getStatus() {
 		switch(this.status) {
 		case INACTIVE:
 			return "Buses Not Running.";
@@ -70,6 +69,16 @@ public class NextBusScraper {
 			return "ARRIVING. Next Bus In " + minutes + " minutes.";
 		}
 		
-		return "Unknown Error.";
+		return "Unknown Error.";		
+	}
+	
+	@Override
+	public String toString() {
+		String retval = "Line: " + route.getLine().getVanityName();
+		retval += "\nStop: " + route.getStop().getVanityName();
+		retval += "\nStatus: " + getStatus();
+		retval += "\n";
+		
+		return retval;		
 	}
 }

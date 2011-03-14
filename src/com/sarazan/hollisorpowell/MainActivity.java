@@ -30,6 +30,18 @@ public class MainActivity extends Activity {
         
         new ScrapeTask().execute(route);
         
+        line = routeManager.lineAtIndex(1);
+        stop = line.stopAtIndex(0);
+        route = new BusRoute(stop);
+        
+        new ScrapeTask().execute(route);
+
+        line = routeManager.lineAtIndex(1);
+        stop = line.stopAtIndex(1);
+        route = new BusRoute(stop);
+        
+        new ScrapeTask().execute(route);
+        
         tv = new TextView(this);
         setContentView(tv);
     }
@@ -47,7 +59,8 @@ public class MainActivity extends Activity {
 		
 		@Override
 		protected void onPostExecute(NextBusScraper result) {
-			tv.setText(result.toString());
+			CharSequence text = tv.getText() + "\n" + result.toString();
+			tv.setText(text);
 		}    	
     }
 }

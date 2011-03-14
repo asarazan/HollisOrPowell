@@ -33,4 +33,8 @@ public class BusRoute {
 	public BusLine getLine() {
 		return stop.getLine();
 	}
+	
+	public BusStop getStop() {
+		return stop;
+	}
 }
